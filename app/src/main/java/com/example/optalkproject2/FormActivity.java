@@ -41,21 +41,15 @@ public class FormActivity extends AppCompatActivity {
         itemValueEditTextList = new ArrayList<>();
 
         // Set up click listener for Add Item button
-        addItemButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                // Add a new item field to the itemsContainer
-                addItemField();
-            }
+        addItemButton.setOnClickListener(v -> {
+            // Add a new item field to the itemsContainer
+            addItemField();
         });
 
         // Set up click listener for submit button
-        submitButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                // Solve knapsack problem and display results
-                solveKnapsackAndDisplayResults();
-            }
+        submitButton.setOnClickListener(v -> {
+            // Solve knapsack problem and display results
+            solveKnapsackAndDisplayResults();
         });
     }
 
