@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">OptAlkProject2</string>
+    <string name="first_fragment_label">Első rész</string>
+    <string name="second_fragment_label">Második rész</string>
+    <string name="next">Következő</string>
+    <string name="previous">Előző</string>
+    <string name="enter_items_weight_value">Tárgyak bevitele (súly, érték)</string>
+    <string name="enter_backpack_capacity">Hátizsák kapacitás megadása</string>
+    <string name="submit">Mehet</string>
+    <string name="add_item">Tárgy hozzáadása</string>
+    <string name="prefill_form">Kitöltés példa adatokkal</string>
+    <string name="start">Start</string>
+    <string name="settings">Beállítások</string>
+    <string name="quit">Kilépés</string>
+    <string name="knapsack_problem_solver_n_applications_of_optimisation_2024">Hátizsák probléma megoldó Optimalizálás alkalmazásai 2024</string>
+    <string name="title_activity_settings">Beállítások</string>
+    <string name="signature_title">Aláírás címe</string>
+    <string name="reply_title">Válasz cím</string>
+    <string name="sync_header">Szinkronizálási fejléc</string>
+    <string name="sync_title">Szinkronizálás címe</string>
+    <string name="attachment_summary_off">Csatolási összefoglaló kikapcsolva</string>
+    <string name="attachment_summary_on">Csatolási összefoglaló bekapcsolva</string>
+    <string name="attachment_title">Csatolás címe</string>
+    <string name="messages_header">Üzenetek fejléc</string>
+    <string name="english">Angol</string>
+    <string name="hungarian">Magyar</string>
+    <string name="item">Tárgy</string>
+</resources>

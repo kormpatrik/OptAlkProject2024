@@ -37,7 +37,22 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        // Implement actions for other buttons if needed
+        settingsButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // Start the FormActivity when Start button is clicked
+                startActivity(new Intent(MainActivity.this, SettingsActivity.class));
+            }
+        });
+
+        // Set click listener for the Quit button
+        quitButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // Quit the app
+                finish();
+            }
+        });
 
     }
 }

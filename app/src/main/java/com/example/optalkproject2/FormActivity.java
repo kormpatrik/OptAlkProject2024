@@ -1,6 +1,8 @@
 package com.example.optalkproject2;
 
+import android.annotation.SuppressLint;
 import android.os.Bundle;
+import android.text.InputType;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
@@ -58,6 +60,7 @@ public class FormActivity extends AppCompatActivity {
     }
 
     // Method to add a new item field dynamically
+    @SuppressLint("SetTextI18n")
     private void addItemField() {
         int itemCount = itemsContainer.getChildCount() + 1; // Calculate the item count
 
@@ -75,12 +78,16 @@ public class FormActivity extends AppCompatActivity {
                 ViewGroup.LayoutParams.WRAP_CONTENT,
                 ViewGroup.LayoutParams.WRAP_CONTENT
         ));
-        itemLabel.setText("Item " + itemCount + ": ");
+        itemLabel.setText(getString(R.string.item) + itemCount + ": ");
         itemLayout.addView(itemLabel);
 
         // Create new EditTexts for weight and value inputs
         EditText weightEditText = new EditText(FormActivity.this);
         EditText valueEditText = new EditText(FormActivity.this);
+
+        // Set input type to accept numbers only
+        weightEditText.setInputType(InputType.TYPE_CLASS_NUMBER);
+        valueEditText.setInputType(InputType.TYPE_CLASS_NUMBER);
 
         // Set attributes for the EditTexts
         weightEditText.setLayoutParams(new LinearLayout.LayoutParams(
@@ -108,6 +115,7 @@ public class FormActivity extends AppCompatActivity {
         itemWeightEditTextList.add(weightEditText);
         itemValueEditTextList.add(valueEditText);
     }
+
 
 
 
@@ -205,5 +213,35 @@ public class FormActivity extends AppCompatActivity {
         TextView resultTextView = findViewById(R.id.resultTextView);
         resultTextView.setText(resultText.toString());
     }
+
+    public void prefillFormButtonClick(View view) {
+        prefillFormWithSampleData();
+    }
+
+
+    // Add this method to your FormActivity class
+    private void prefillFormWithSampleData() {
+        // Clear existing item fields
+        itemsContainer.removeAllViews();
+        itemWeightEditTextList.clear();
+        itemValueEditTextList.clear();
+
+        // Hardcoded sample data
+        int[] sampleWeights = {2, 3, 4, 5};
+        int[] sampleValues = {10, 20, 30, 40};
+
+        // Add item fields with sample data
+        for (int i = 0; i < sampleWeights.length; i++) {
+            addItemField(); // Add item field dynamically
+            EditText weightEditText = itemWeightEditTextList.get(i);
+            EditText valueEditText = itemValueEditTextList.get(i);
+            weightEditText.setText(String.valueOf(sampleWeights[i]));
+            valueEditText.setText(String.valueOf(sampleValues[i]));
+        }
+
+        // Set capacity field with sample capacity
+        capacityEditText.setText("8");
+    }
+
 
 }
